@@ -1,3 +1,4 @@
+import { Heroi } from './../../models/herois/heroi';
 import { HeroisService } from './../../services/herois/herois.service';
 import { Component } from '@angular/core';
 
@@ -11,14 +12,27 @@ export class HomeComponent {
   constructor(private heroisService: HeroisService) {}
 
   listarTodosHerois() {
-    this.heroisService.listarHerois()
+    this.heroisService.listar()
     .then(herois => console.log(herois))
     .catch(error => console.error(error))
   }
   
   mostrarHeroi() {
-    this.heroisService.listarHeroisPorId(3)
+    this.heroisService.listarPorId(3)
     .then(herois => console.log(herois))
+    .catch(error => console.error(error))
+  }
+
+  adicionarHeroi() {
+    const heroi: Heroi = {
+      id: 4,
+      nome: "Flash",
+      idade: 31,
+      identidadeSecreta: "Barry Allen",
+      poderes: "Super velocidade"
+    }
+    this.heroisService.adicionar(heroi)
+    .then(herois => console.log('adicionado'))
     .catch(error => console.error(error))
   }
   

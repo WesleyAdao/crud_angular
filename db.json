@@ -1,6 +1,5 @@
 {
   "herois": [
-    
     {
       "id": 1,
       "nome": "Molecule Man",
@@ -36,6 +35,13 @@
         "Sopro de Gelo",
         "Voo"
       ]
+    },
+    {
+      "id": 4,
+      "nome": "Flash",
+      "idade": 31,
+      "identidadeSecreta": "Barry Allen",
+      "poderes": "Super velocidade"
     }
   ]
 }

@@ -11,13 +11,18 @@ export class HeroisService {
 
   constructor(private http: HttpClient) { }
 
-  public async listarHerois(){
+  public async listar(){
     var value = this.http.get<Heroi[]>(`${API_PATH}Herois`);
     return await lastValueFrom(value);
   }
   
-  public async listarHeroisPorId(id: number){
+  public async listarPorId(id: number){
     var value = this.http.get<Heroi>(`${API_PATH}Herois/${id}`);
+    return await lastValueFrom(value);
+  }
+
+  public async adicionar(heroi: Heroi) {
+    var value = this.http.post<Heroi>(`${API_PATH}Herois`, heroi);
     return await lastValueFrom(value);
   }
   
