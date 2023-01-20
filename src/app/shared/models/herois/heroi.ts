@@ -1,5 +1,5 @@
 export interface Heroi {
-    id: number,
+    id?: number,
     nome: string,
     idade: number,
     identidadeSecreta: string,

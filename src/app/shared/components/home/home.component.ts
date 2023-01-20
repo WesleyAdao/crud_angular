@@ -25,13 +25,25 @@ export class HomeComponent {
 
   adicionarHeroi() {
     const heroi: Heroi = {
-      id: 4,
       nome: "Flash",
       idade: 31,
       identidadeSecreta: "Barry Allen",
       poderes: "Super velocidade"
     }
     this.heroisService.adicionar(heroi)
+    .then(herois => console.log('adicionado'))
+    .catch(error => console.error(error))
+  }
+  
+  editarHeroi() {
+    const heroi: Heroi = {
+      id: 4,
+      nome: "Flash",
+      idade: 34,
+      identidadeSecreta: "Barry Allen",
+      poderes: "Super velocidade"
+    }
+    this.heroisService.editar(heroi)
     .then(herois => console.log('adicionado'))
     .catch(error => console.error(error))
   }

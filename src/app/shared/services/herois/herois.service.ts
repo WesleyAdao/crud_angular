@@ -26,4 +26,9 @@ export class HeroisService {
     return await lastValueFrom(value);
   }
   
+  public async editar(heroi: Heroi) {
+    var value = this.http.put<Heroi>(`${API_PATH}Herois/${heroi.id}`, heroi);
+    return await lastValueFrom(value);
+  }
+  
 }
