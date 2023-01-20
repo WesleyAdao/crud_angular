@@ -48,4 +48,10 @@ export class HomeComponent {
     .catch(error => console.error(error))
   }
   
+  deletarHeroi() {
+    this.heroisService.deletar(4)
+    .then(res => console.log('Removido', res))
+    .catch(error => console.error(error))
+  }
+
 }

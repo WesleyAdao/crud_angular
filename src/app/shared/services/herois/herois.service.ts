@@ -31,4 +31,9 @@ export class HeroisService {
     return await lastValueFrom(value);
   }
   
+  public async deletar(id: number) {
+    var value = this.http.delete(`${API_PATH}Herois/${id}`);
+    return await lastValueFrom(value);
+  }
+  
 }
